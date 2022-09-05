@@ -25,14 +25,14 @@
             <a class="" href="courses.html" ><i class="fa fa-arrow-circle-left mt-4" style="font-size: 1.5rem; color: #004A98;"></i></a>
         </div>
         <!------------------------Register form section------------------------->
-        <section class="" >
+        <section class=""  >
             <div class="container">
-                <div class="row justify-content-lg-start mt-md-5">
+                <div class="row justify-content-lg-center mt-md-5">
                     <div class="col-12 col-md-8 col-lg-8 col-xl-6 shadow bg-body mt-4 rounded">
                         <div class="row">
                             <div class="col text-center mt-3">
                             <p class="lead">Welcome to NewHorizons Institute Learning Application.</p>
-                            <p class="text-start">You are Applying for ${} Input your </p>
+                            <p id="form-text"></p>
                             </div>
                         </div>
                         <form method="post" action="mail.php">
@@ -73,7 +73,14 @@
 
 
 
+    
 
+    <script>
+        const formText = document.getElementById('form-text');
+        const getLocalStorage = () => localStorage.getItem('card-title')? localStorage.getItem('card-title') : 'No course selected';
+        const courseName = getLocalStorage()
+        formText.textContent = `You are applying for ${courseName} Input your details below`;
+    </script>
 
     <script src="js/script.js"></script>
     <script src="js/bootstrap.min.js"></script>
